@@ -1,8 +1,8 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.frgmt.intellijplatformplugindotpath</id>
-    <name>intellij-platform-plugin-dot-path Template</name>
-    <vendor>frgmt</vendor>
+    <name>Copy Dot Path</name>
+    <vendor>fragment</vendor>
 
     <depends>com.intellij.modules.platform</depends>
 
@@ -15,4 +15,21 @@
     <applicationListeners>
         <listener class="com.github.frgmt.intellijplatformplugindotpath.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
+
+    <actions>
+        <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopyContentRootPathAction"
+                class="com.github.frgmt.intellijplatformplugindotpath.copies.CopyContentRootPathAction"
+                text="Dot Path From Content Root"
+                description="Copy path from Content root"
+        >
+            <add-to-group group-id="CopyFileReference" anchor="after" relative-to-action="CopyContentRootPath"/>
+        </action>
+        <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopySourceRootPathAction"
+                class="com.github.frgmt.intellijplatformplugindotpath.copies.CopySourceRootPathAction"
+                text="Dot Path From Source Root"
+                description="Copy path from Source root"
+        >
+            <add-to-group group-id="CopyFileReference" anchor="after" relative-to-action="CopySourceRootPath"/>
+        </action>
+    </actions>
 </idea-plugin>

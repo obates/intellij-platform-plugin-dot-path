@@ -20,16 +20,24 @@
         <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopyContentRootPathAction"
                 class="com.github.frgmt.intellijplatformplugindotpath.copies.CopyContentRootPathAction"
                 text="Dot Path From Content Root"
-                description="Copy path from Content root"
+                description="Copy dot path from Content root"
         >
             <add-to-group group-id="CopyFileReference" anchor="after" relative-to-action="CopyContentRootPath"/>
         </action>
         <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopySourceRootPathAction"
                 class="com.github.frgmt.intellijplatformplugindotpath.copies.CopySourceRootPathAction"
                 text="Dot Path From Source Root"
-                description="Copy path from Source root"
+                description="Copy dot path from Source root"
         >
             <add-to-group group-id="CopyFileReference" anchor="after" relative-to-action="CopySourceRootPath"/>
+        </action>
+        <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopyDotPathAction"
+                class="com.github.frgmt.intellijplatformplugindotpath.copies.CopySourceRootPathAction"
+                text="Copy Dot Path"
+                description="Copy dot path from Source root"
+                icon="AllIcons.Actions.Copy"
+        >
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="Copy.Paste.Special"/>
         </action>
     </actions>
 </idea-plugin>

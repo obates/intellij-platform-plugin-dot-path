@@ -15,7 +15,9 @@ class CopyContentRootPathAction : DumbAwareCopyPathProvider() {
         return virtualFile?.let {
             ProjectFileIndex.getInstance(project).getModuleForFile(virtualFile, false)?.let { module ->
                 ModuleRootManager.getInstance(module).contentRoots.mapNotNull { root ->
-                    VfsUtilCore.getRelativePath(virtualFile, root)?.replace("/", ".")
+                    VfsUtilCore.getRelativePath(virtualFile, root)?.let{fileName ->
+                        fileName.substring(0, fileName.lastIndexOf('.')).replace("/", ".")
+                    }
                 }.singleOrNull()
             }
         }
@@ -25,6 +27,8 @@ class CopyContentRootPathAction : DumbAwareCopyPathProvider() {
 class CopySourceRootPathAction : DumbAwareCopyPathProvider() {
     override fun getPathToElement(project: Project, virtualFile: VirtualFile?, editor: Editor?) =
         virtualFile?.let {
-            VfsUtilCore.getRelativePath(virtualFile, ProjectFileIndex.getInstance(project).getSourceRootForFile(virtualFile) ?: return null)?.replace("/", ".")
+            VfsUtilCore.getRelativePath(virtualFile, ProjectFileIndex.getInstance(project).getSourceRootForFile(virtualFile) ?: return null)?.let { fileName ->
+                fileName.substring(0, fileName.lastIndexOf('.')).replace("/", ".")
+            }
         }
 }

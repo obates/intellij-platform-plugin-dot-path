@@ -8,3 +8,6 @@
 
 ### 0.0.2
 - Update document
+
+### 0.0.3
+- Remove file extension of path

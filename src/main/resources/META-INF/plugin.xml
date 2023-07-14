@@ -17,20 +17,23 @@
     </applicationListeners>
 
     <actions>
-        <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopyContentRootPathAction"
-                class="com.github.frgmt.intellijplatformplugindotpath.copies.CopyContentRootPathAction"
-                text="Dot Path From Content Root"
-                description="Copy dot path from Content root"
-        >
-            <add-to-group group-id="CopyFileReference" anchor="after" relative-to-action="CopyContentRootPath"/>
-        </action>
-        <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopySourceRootPathAction"
-                class="com.github.frgmt.intellijplatformplugindotpath.copies.CopySourceRootPathAction"
-                text="Dot Path From Source Root"
-                description="Copy dot path from Source root"
-        >
-            <add-to-group group-id="CopyFileReference" anchor="after" relative-to-action="CopySourceRootPath"/>
-        </action>
+        <group id="com.github.frgmt.intellijplatformplugindotpath.copies.group">
+            <add-to-group group-id="CopyFileReference" anchor="last"/>
+            <separator/>
+            <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopyContentRootPathAction"
+                    class="com.github.frgmt.intellijplatformplugindotpath.copies.CopyContentRootPathAction"
+                    text="Dot Path From Content Root"
+                    description="Copy dot path from Content root"
+            >
+            </action>
+            <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopySourceRootPathAction"
+                    class="com.github.frgmt.intellijplatformplugindotpath.copies.CopySourceRootPathAction"
+                    text="Dot Path From Source Root"
+                    description="Copy dot path from Source root"
+            >
+            </action>
+            <separator/>
+        </group>
         <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopyDotPathAction"
                 class="com.github.frgmt.intellijplatformplugindotpath.copies.CopySourceRootPathAction"
                 text="Copy Dot Path"

@@ -11,3 +11,6 @@
 
 ### 0.0.3
 - Remove file extension of path
+
+### 0.0.4
+- Grouped dot path

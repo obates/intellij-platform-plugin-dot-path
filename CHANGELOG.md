@@ -14,3 +14,6 @@
 
 ### 0.0.4
 - Grouped dot path
+
+### 0.0.5
+- Add normal path in popup menu

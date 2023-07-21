@@ -34,13 +34,22 @@
             </action>
             <separator/>
         </group>
-        <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopyDotPathAction"
-                class="com.github.frgmt.intellijplatformplugindotpath.copies.CopySourceRootPathAction"
-                text="Copy Dot Path"
-                description="Copy dot path from Source root"
-                icon="AllIcons.Actions.Copy"
-        >
+        <group id="com.github.frgmt.intellijplatformplugindotpath.editorpopup.group">
             <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="Copy.Paste.Special"/>
-        </action>
+            <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopyPathAction"
+                    class="com.intellij.ide.actions.CopySourceRootPathProvider"
+                    text="Copy Path From Source Root"
+                    description="Copy path from Source root"
+                    icon="AllIcons.Actions.Copy"
+            >
+            </action>
+            <action id="com.github.frgmt.intellijplatformplugindotpath.copies.CopyDotPathAction"
+                    class="com.github.frgmt.intellijplatformplugindotpath.copies.CopySourceRootPathAction"
+                    text="Copy Dot Path From Source Root"
+                    description="Copy dot path from Source root"
+                    icon="AllIcons.Actions.Copy"
+            >
+            </action>
+        </group>
     </actions>
 </idea-plugin>

@@ -17,3 +17,6 @@
 
 ### 0.0.5
 - Add normal path in popup menu
+
+### 0.0.6
+- Fix bug
